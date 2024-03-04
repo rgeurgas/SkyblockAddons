@@ -95,7 +95,7 @@ public enum Location {
     GOBLIN_HOLDOUT("Goblin Holdout"),
     PRECURSOR_REMNANT("Precursor Remnants"),
     FAIRY_GROTTO("Fairy Grotto"),
-    KHAZAD_DUM("Khazad-dûm"), //These are the random gen places in each biome
+    KHAZAD_DUM("Khazad-dûm"), // These are the random gen places in each biome
     JUNGLE_TEMPLE("Jungle Temple"),
     MINES_OF_DIVAN("Mines of Divan"),
     GOBLIN_QUEEN_DEN("Goblin Queens Den"),
@@ -115,7 +115,10 @@ public enum Location {
     SHEPHERDS_KEEP("Shepherds Keep"),
     TRAPPERS_DEN("Trappers Den"),
 
+    // Spider's Den
     SPIDERS_DEN("Spider's Den"),
+    ARACHNES_BURROW("Arachne's Burrow"),
+    ARACHNES_SANCTUARY("Arachne's Sanctuary"),
 
     BLAZING_FORTRESS("Blazing Fortress"),
 
@@ -178,13 +181,15 @@ public enum Location {
     SMOLDERING_TOMB("Smoldering Tomb"),
 
     /*
-    Out of Bounds
-    This is a valid location in Skyblock, it isn't a placeholder or a made up location.
-    It actually displays when the player is out of bounds.
+     * Out of Bounds
+     * This is a valid location in Skyblock, it isn't a placeholder or a made up
+     * location.
+     * It actually displays when the player is out of bounds.
      */
     NONE("None"),
 
-    // This is used when the mod is unable to retrieve the player's location from the sidebar.
+    // This is used when the mod is unable to retrieve the player's location from
+    // the sidebar.
     UNKNOWN("Unknown");
 
     /**
@@ -202,15 +207,24 @@ public enum Location {
     Location(String scoreboardName) {
         this.scoreboardName = scoreboardName;
 
-        Set<String> NO_DISCORD_RPC = Sets.newHashSet("ISLAND", "BAZAAR", "DEEP_CAVERNS", "GUNPOWDER_MINES", "LAPIS_QUARRY", "PIGMAN_DEN", "JERRYS_WORKSHOP", "JERRY_POND",
-                "DWARVEN_MINES", "DWARVEN_VILLAGE", "GATES_TO_THE_MINES", "THE_LIFT", "THE_FORGE", "FORGE_BASIN", "LAVA_SPRINGS", "PALACE_BRIDGE", "ROYAL_PALACE",
-                "ARISTOCRAT_PASSAGE", "HANGING_TERRACE", "CLIFFSIDE_VEINS", "RAMPARTS_QUARRY", "DIVANS_GATEWAY", "FAR_RESERVE", "GOBLIN_BURROWs", "UPPER_MINES",
-                "MINERS_GUILD", "GREAT_ICE_WALL", "THE_MIST", "CC_MINECARTS_CO", "GRAND_LIBRARY", "HANGING_COURT", "ROYAL_MINES",
-                "DESERT_SETTLEMENT", "TREASURE_HUNTER_CAMP", "OASIS", "MUSHROOM_GORGE", "GLOWING_MUSHROOM_CAVE", "OVERGROWN_MUSHROOM_CAVE", "JAKES_HOUSE", "SHEPHERDS_KEEP", "TRAPPERS_DEN",
-                "DOJO", "BURNING_DESERT", "BLAZING_VOLCANO", "THE_BASTION", "MAGE_OUTPOST", "BARBARIAN_OUTPOST", "CATHEDRAL", "CRIMSON_FIELDS", "CRIMSON_ISLE", "MINION_SHOP",
-                "DRAGONTAIL_BLACKSMITH", "DRAGONTAIL_BANK", "DRAGONTAIL_BAZAAR", "DRAGONTAIL_AUCTION_HOUS", "DRAGONTAIL_TOWNSQUARE", "DRAGONTAIL", "RUINS_OF_ASHFANG", "ODGERS_HUT",
-                "MAGMA_CHAMBER", "KUUDRAS_END", "FORGOTTEN_SKULL", "CHIEFS_HUT", "STRONGHOLD", "SCARLETON_MINION_SHOP", "SCARLETON_BLACKSMITH", "SCARLETON_BANK", "SCARLETON_BAZAAR",
-                "SCARLETON_PLAZA", "SCARLETON", "PLHLEGBLAST_POOL", "MAGE_COUNCIL", "THRONE_ROOM", "IGRUPANS_CHICKEN_COOP", "COURTYARD", "AURAS_LAB", "BELLY_OF_THE_BEAST", "MATRIARCHS_LAIR",
+        Set<String> NO_DISCORD_RPC = Sets.newHashSet("ISLAND", "BAZAAR", "DEEP_CAVERNS", "GUNPOWDER_MINES",
+                "LAPIS_QUARRY", "PIGMAN_DEN", "JERRYS_WORKSHOP", "JERRY_POND",
+                "DWARVEN_MINES", "DWARVEN_VILLAGE", "GATES_TO_THE_MINES", "THE_LIFT", "THE_FORGE", "FORGE_BASIN",
+                "LAVA_SPRINGS", "PALACE_BRIDGE", "ROYAL_PALACE",
+                "ARISTOCRAT_PASSAGE", "HANGING_TERRACE", "CLIFFSIDE_VEINS", "RAMPARTS_QUARRY", "DIVANS_GATEWAY",
+                "FAR_RESERVE", "GOBLIN_BURROWs", "UPPER_MINES",
+                "MINERS_GUILD", "GREAT_ICE_WALL", "THE_MIST", "CC_MINECARTS_CO", "GRAND_LIBRARY", "HANGING_COURT",
+                "ROYAL_MINES",
+                "DESERT_SETTLEMENT", "TREASURE_HUNTER_CAMP", "OASIS", "MUSHROOM_GORGE", "GLOWING_MUSHROOM_CAVE",
+                "OVERGROWN_MUSHROOM_CAVE", "JAKES_HOUSE", "SHEPHERDS_KEEP", "TRAPPERS_DEN",
+                "DOJO", "BURNING_DESERT", "BLAZING_VOLCANO", "THE_BASTION", "MAGE_OUTPOST", "BARBARIAN_OUTPOST",
+                "CATHEDRAL", "CRIMSON_FIELDS", "CRIMSON_ISLE", "MINION_SHOP",
+                "DRAGONTAIL_BLACKSMITH", "DRAGONTAIL_BANK", "DRAGONTAIL_BAZAAR", "DRAGONTAIL_AUCTION_HOUS",
+                "DRAGONTAIL_TOWNSQUARE", "DRAGONTAIL", "RUINS_OF_ASHFANG", "ODGERS_HUT",
+                "MAGMA_CHAMBER", "KUUDRAS_END", "FORGOTTEN_SKULL", "CHIEFS_HUT", "STRONGHOLD", "SCARLETON_MINION_SHOP",
+                "SCARLETON_BLACKSMITH", "SCARLETON_BANK", "SCARLETON_BAZAAR",
+                "SCARLETON_PLAZA", "SCARLETON", "PLHLEGBLAST_POOL", "MAGE_COUNCIL", "THRONE_ROOM",
+                "IGRUPANS_CHICKEN_COOP", "COURTYARD", "AURAS_LAB", "BELLY_OF_THE_BEAST", "MATRIARCHS_LAIR",
                 "SMOLDERING_TOMB", "MYSTIC_MARSH", "SCARLETON_AUCTION_HOUS", "THE_WASTELAND");
 
         if (NO_DISCORD_RPC.contains(name())) {
